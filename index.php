@@ -237,6 +237,6 @@ if (isset($_GET['route']) && $_GET['route'] === 'logout') {
         <p>&copy; 2024 CyberGames Arras. Tous droits réservés.</p>
     </footer>
 
-    <script src="js/script.js"></script>
+ 
 </body>
 </html>

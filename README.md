@@ -51,7 +51,6 @@ CyberGames Arras est une application web conçue pour moderniser la gestion des 
 
 ### **Frontend :**
 - **HTML/CSS** : Structure et style des pages.
-- **JavaScript** : Interactions dynamiques.
 
 ### **Base de données :**
 - **MySQL** : Stockage des données des utilisateurs, postes, réservations, forfaits et tournois.
