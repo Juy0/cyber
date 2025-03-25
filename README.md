@@ -70,4 +70,4 @@ CyberGames Arras est une application web conçue pour moderniser la gestion des 
 ### **Étapes :**
 1. Clonez le repository GitHub :
    ```bash
-   git clone https://github.com/votre-repository/cybergames.git
+   git clone https://github.com/Juy0/cyber.git
