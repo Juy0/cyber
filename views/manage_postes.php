@@ -92,9 +92,10 @@
                 <td><?= htmlspecialchars($poste['date_achat']); ?></td>
                 <td><?= htmlspecialchars($poste['statut']); ?></td>
                 <td class="actions">
-                    <a class="delete" href="index.php?route=manage_postes&action=delete&id=<?= $poste['id']; ?>">Supprimer</a>
-                    <a href="index.php?route=manage_postes&action=edit&id=<?= $poste['id'] ?>">Modifier</a>
-
+                    <?php if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 'admin'): ?>
+                        <a href="index.php?route=manage_postes&action=edit&id=<?= $poste['id'] ?>">Modifier</a>
+                        <a class="delete" href="index.php?route=manage_postes&action=delete&id=<?= $poste['id']; ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce poste ?');">Supprimer</a>
+                    <?php endif; ?>
                 </td>
             </tr>
         <?php endforeach; ?>

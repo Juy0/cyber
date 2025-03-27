@@ -241,6 +241,14 @@ if (isset($_GET['route']) && $_GET['route'] === 'logout') {
             case 'delete_game':
                 include 'controllers/delete_game.php';
                 break;
+            case 'manage_tournaments':
+                // Vérifie que l'utilisateur est admin
+                if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'admin') {
+                    header('Location: index.php?route=login');
+                    exit;
+                }
+                include 'controllers/manage_tournaments.php';
+                break;
         }
         ?>
 

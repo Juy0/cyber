@@ -64,7 +64,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
 if (isset($_GET['action']) && $_GET['action'] === 'delete' && isset($_GET['id'])) {
     $stmt = $pdo->prepare("DELETE FROM Postes WHERE id = ?");
     if ($stmt->execute([$_GET['id']])) {
-        header('Location: index.php?route=manage_postes');
+        header('Location: index.php?route=manage_postes&success=deleted');
         exit;
     } else {
         $error = 'Erreur lors de la suppression du poste.';
