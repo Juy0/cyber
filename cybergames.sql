@@ -150,7 +150,8 @@ CREATE TABLE `tournoi` (
   `nom` varchar(100) NOT NULL,
   `date` date NOT NULL,
   `statut` enum('ouvert','fermé','en cours','terminé') NOT NULL,
-  `description` text DEFAULT NULL
+  `description` text DEFAULT NULL,
+  `jeu_id` INT NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -185,7 +186,26 @@ INSERT INTO `utilisateurs` (`id`, `nom`, `prenom`, `email`, `mdp`, `type_utilisa
 (10, 'Michel', 'Junior', 'juniormichel701@gmail.com', '$2y$10$ZkxHGRnhNpyAUKmuvsUeW.X3bZruwI4bCXWU7heQdP2JVzxc0qzV2', 'admin'),
 (11, 'Michel', 'Junior', 'juniormichel701@proton.me', '$2y$10$pOLQpBtrcgJirZPDj1Ubxe9YDdOx96.8JcCeuY/8CTPH7ZToVoHyW', 'employé');
 
+-- --------------------------------------------------------
+
 --
+-- Structure de la table `jeux`
+--
+
+CREATE TABLE `jeux` (
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `nom` VARCHAR(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `jeux`
+--
+
+INSERT INTO `jeux` (`nom`) VALUES
+('Counter-Strike: Global Offensive'),
+('Valorant'),
+('League of Legends');
+
 -- Index pour les tables déchargées
 --
 
@@ -325,6 +345,14 @@ ALTER TABLE `maintenance`
 ALTER TABLE `reservation`
   ADD CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`utilisateur_id`) REFERENCES `utilisateurs` (`id`),
   ADD CONSTRAINT `reservation_ibfk_2` FOREIGN KEY (`poste_id`) REFERENCES `postes` (`id`);
+
+--
+-- Contraintes pour la table `tournoi`
+--
+ALTER TABLE `tournoi`
+  ADD COLUMN `jeu_id` INT NOT NULL AFTER `nom`,
+  ADD FOREIGN KEY (`jeu_id`) REFERENCES `jeux`(`id`);
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

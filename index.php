@@ -232,6 +232,15 @@ if (isset($_GET['route']) && $_GET['route'] === 'logout') {
             case 'add_game':
                 include 'controllers/add_game.php';
                 break;
+            case 'jeux':
+                include 'controllers/jeux.php';
+                break;
+            case 'edit_game':
+                include 'controllers/edit_game.php';
+                break;
+            case 'delete_game':
+                include 'controllers/delete_game.php';
+                break;
         }
         ?>
 
@@ -243,9 +252,7 @@ if (isset($_GET['route']) && $_GET['route'] === 'logout') {
     </main>
 
     <footer>
-        <p>&copy; 2024 CyberGames Arras. Tous droits réservés.</p>
+        <?php include 'views/footer.php'; ?>
     </footer>
-
- 
 </body>
 </html>
