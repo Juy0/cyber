@@ -128,8 +128,8 @@ if (isset($_GET['route']) && $_GET['route'] === 'logout') {
                 break;
             
             case 'create_tournament':
-                // Vérifie que l'utilisateur est connecté et a les droits
-                if (!isset($_SESSION['user_id']) || ($_SESSION['user_type'] !== 'employé' && $_SESSION['user_type'] !== 'admin')) {
+                // Vérifie que l'utilisateur est connecté et a les droits d'admin
+                if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'admin') {
                     header('Location: index.php?route=login');
                     exit;
                 }
@@ -222,6 +222,15 @@ if (isset($_GET['route']) && $_GET['route'] === 'logout') {
                     exit;
                 }
                 include 'controllers/postes_reserves.php'; // Contrôleur pour afficher les postes réservés
+                break;
+            case 'inscrire_tournoi':
+                include 'controllers/inscrire_tournoi.php';
+                break;
+            case 'desinscrire_tournoi':
+                include 'controllers/desinscrire_tournoi.php';
+                break;
+            case 'add_game':
+                include 'controllers/add_game.php';
                 break;
         }
         ?>
