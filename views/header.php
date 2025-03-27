@@ -31,6 +31,9 @@ ob_start(); // Commence la mise en mémoire tampon
             <?php endif; ?>
 
             <!-- Liens pour les utilisateurs connectés -->
+            <?php if (isset($_SESSION['user_id']) && $_SESSION['user_type'] !== 'admin'): ?>
+                <li><a href="index.php?route=acheter_forfait">Acheter un Forfait</a></li>
+            <?php endif; ?>
             <?php if (isset($_SESSION['user_id'])): ?>
                 <li><a href="index.php?route=logout">Déconnexion</a></li>
             <?php else: ?>

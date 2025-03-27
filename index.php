@@ -207,6 +207,11 @@ if (isset($_GET['route']) && $_GET['route'] === 'logout') {
                 include 'controllers/profil.php';
                 break;
             case 'acheter_forfait':
+                // Vérifie que l'utilisateur est connecté
+                if (!isset($_SESSION['user_id'])) {
+                    header('Location: index.php?route=login');
+                    exit;
+                }
                 include 'controllers/acheter_forfait.php';
                 break;
             case 'annuler_reservation':

@@ -36,8 +36,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['forfait_id'])) {
         exit;
     }
 } else {
-    // Redirection en cas de soumission incorrecte
-    header('Location: index.php?route=profil');
+    // Récupération des forfaits disponibles
+    $stmt = $pdo->query("SELECT * FROM Forfait");
+    $forfaits_disponibles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // Inclure la vue pour acheter un forfait
+    include $_SERVER['DOCUMENT_ROOT'] . '/cyber/views/acheter_forfait.php';
     exit;
 }
 ?>
