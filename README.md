@@ -104,4 +104,63 @@ Pour installer et exécuter l'application, suivez les instructions ci-dessous :
     git clone https://github.com/Juy0/cyber.git
     ```
 
+2.  **Configuration de la base de données avec XAMPP :**
+    *   Démarrez les services Apache et MySQL via le panneau de contrôle XAMPP.
+    *   Ouvrez votre navigateur et accédez à `http://localhost/phpmyadmin/`.
+    *   Créez une nouvelle base de données nommée `cybergames`.
+    *   Importez le fichier `cybergames.sql` (situé à la racine du projet) dans la base de données `cybergames` pour créer les tables et insérer les données initiales.
+    *   Modifiez le fichier `db.php` pour correspondre à vos paramètres de connexion MySQL (hôte, nom d'utilisateur, mot de passe).
+
+3.  **Arborescence des fichiers :**
+
+    ```
+    cyber/
+    ├── controllers/
+    │   ├── add_game.php
+    │   ├── acheter_forfait.php
+    │   ├── annuler_reservation.php
+    │   ├── create_tournament.php
+    │   ├── delete_game.php
+    │   ├── desinscrire_tournoi.php
+    │   ├── edit_game.php
+    │   ├── edit_postes.php
+    │   ├── inscrire_tournoi.php
+    │   ├── login.php
+    │   ├── manage_postes.php
+    │   ├── manage_reservations.php
+    │   ├── manage_tournaments.php
+    │   ├── postes_reserves.php
+    │   ├── profil.php
+    │   ├── register.php
+    │   ├── resilier_forfait.php
+    │   └── reserve_poste.php
+    ├── css/
+    │   └── style.css
+    ├── db.php
+    ├── index.php
+    ├── views/
+    │   ├── add_game.php
+    │   ├── acheter_forfait.php
+    │   ├── admin.php
+    │   ├── create_tournament.php
+    │   ├── edit_game.php
+    │   ├── edit_postes.php
+    │   ├── edit_tournament.php
+    │   ├── footer.php
+    │   ├── form_postes.php
+    │   ├── header.php
+    │   ├── home.php
+    │   ├── inventory.php
+    │   ├── jeux.php
+    │   ├── login.php
+    │   ├── manage_postes.php
+    │   ├── manage_reservations.php
+    │   ├── profil.php
+    │   ├── register.php
+    │   ├── reserve_poste.php
+    │   └── tournois.php
+    ├── cybergames.sql
+    └── README.md
+    ```
+
 ---
