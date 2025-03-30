@@ -162,5 +162,12 @@ Pour installer et exécuter l'application, suivez les instructions ci-dessous :
     ├── cybergames.sql
     └── README.md
     ```
+4.  **Accéder au site :**
+
+    Une fois l'installation terminée, ouvrez votre navigateur web et accédez à l'application en entrant l'URL suivante :
+
+    ```
+    http://localhost/cyber/index.php
+    ```
 
 ---
