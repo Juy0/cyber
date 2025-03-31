@@ -1,5 +1,4 @@
 <?php
-session_start();
 include $_SERVER['DOCUMENT_ROOT'] . '/cyber/db.php';
 
 // Vérifie que l'utilisateur est admin
